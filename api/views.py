@@ -43,13 +43,13 @@ def pacientes(request):
 @csrf_exempt
 def paciente(request, paciente_id):
     if request.method == "GET":
-        return pacienteController.listar()
+        return pacienteController.getById(paciente_id)
 
     elif request.method == "PUT":
         return pacienteController.atualizar(request, paciente_id)
 
     elif request.method == "DELETE":
-        return pacienteController.atualizar(request, id)
+        return pacienteController.deletar(paciente_id)
 
 def sintomas(request):
     if request.method == "GET":
